@@ -1,62 +1,117 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap');
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
-.header {
-    height: 45px;
-    width: 100vw;
-    background: #bdc3c7; 
-    background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7); 
-    background: linear-gradient(to right, #2c3e50, #bdc3c7); 
-    
-    display: flex;
-    justify-content: space-between;
-    border-radius: 8px;
-    position: fixed;
+body {
+    margin: 0px;
+    font-family: 'segoe ui';
   }
   
-  .tabs ul {
-    display: flex;
-    text-decoration: none;
-    list-style: none;
-    font-family: sans-serif;
-    margin-right: 10px;
+  .nav {
+    height: 50px;
+    width: 100%;
+    background: #1D4350;
+    background: -webkit-linear-gradient(to right, #A43931, #1D4350);
+    background: linear-gradient(to right, #A43931, #1D4350);
+    position: relative;
   }
-  .tabs ul li {
-    padding: 12px;
+  
+  .nav > .nav-header {
+    display: inline;
   }
-  .tabs ul li a {
-    color: white;
-    font-family: sans-serif;
-    text-decoration: none;
-    cursor: pointer;
+  
+  .nav > .nav-header > .nav-title {
+    display: inline-block;
+    font-size: 22px;
+    color: #fff;
+    padding: 10px 10px 10px 10px;
   }
-  .tabs ul li a:hover {
-    color: rgb(24, 21, 21);
-    border-bottom: 0.1rem solid rgb(24, 21, 21);
-    padding-bottom: 0.2rem;
+  
+  .nav > .nav-btn {
+    display: none;
+  }
+  
+  .nav > .nav-links {
+    display: inline;
+    float: right;
     font-size: 18px;
-    transition: 0.2s ease;
   }
-  .logo {
-    justify-content: center;
-    align-items: center;
-    font-family: sans-serif;
-    padding-left: 20px;
-    padding-top: 10px;
-    color: yellow;
-    font-weight: 600;
-    font-size: 20px;
-    padding-bottom: 10px;
+  
+  .nav > .nav-links > a {
+    display: inline-block;
+    padding: 13px 10px 13px 10px;
+    text-decoration: none;
+    color: #efefef;
   }
-  .logo span {
-    color: rgb(129, 201, 114);
+  
+  .nav > .nav-links > a:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  
+  .nav > #nav-check {
+    display: none;
+  }
+  .name{
+    color: green;
     font-weight: 800;
+  }
+  .nav-title .this{
+    font-weight: 600;
+    color: yellow;
+  }
+  
+  @media (max-width:900px) {
+    .nav > .nav-btn {
+      display: inline-block;
+      position: absolute;
+      right: 0px;
+      top: 0px;
+    }
+    .nav > .nav-btn > label {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      padding: 13px;
+    }
+    .basic-info{
+        font-size: 1rem;
+        padding: 1.5rem;
+    }
+    .nav > .nav-btn > label:hover,.nav  #nav-check:checked ~ .nav-btn > label {
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+    .nav > .nav-btn > label > span {
+      display: block;
+      width: 25px;
+      height: 10px;
+      border-top: 2px solid #eee;
+    }
+    .nav > .nav-links {
+      position: absolute;
+      display: block;
+      width: 100%;
+      background-color: #333;
+      height: 0px;
+      transition: all 0.3s ease-in;
+      overflow-y: hidden;
+      top: 50px;
+      left: 0px;
+    }
+    .nav > .nav-links > a {
+      display: block;
+      width: 100%;
+    }
+    .nav > #nav-check:not(:checked) ~ .nav-links {
+      height: 0px;
+    }
+    .nav > #nav-check:checked ~ .nav-links {
+      height: calc(100vh - 50px);
+      overflow-y: auto;
+    }
   }
 
 :root {
@@ -412,3 +467,24 @@ width: 60px;
 .right pre{
  color: black;
 }
+@media only screen and ( min-width: 768px ) and ( max-width: 1035px ) {
+    h1 { font-size: 80px; }
+    form { width: 736px !important; }
+      #wpcf7-f156-p143-o1\20 formwrap > form > p > span.wpcf7-form-control-wrap.Subject.flat > select, #wpcf7-f156-p143-o1\20 formwrap > form > p > span.wpcf7-form-control-wrap.Subject.flat { width: 731px !important; }
+      .nameinput, .emailinput, #wpcf7-f156-p143-o1\20 formwrap > form > p > span.wpcf7-form-control-wrap.Message > textarea { width: 666px !important; }
+  }
+  
+  @media only screen and ( max-width: 804px ) {
+      h1 { font-size: 50px; }
+    form { width: 450px !important; }
+     #wpcf7-f156-p143-o1\20 formwrap > form > p > span.wpcf7-form-control-wrap.Subject.flat > select, #wpcf7-f156-p143-o1\20 formwrap > form > p > span.wpcf7-form-control-wrap.Subject.flat { width: 445px !important; }
+      .nameinput, .emailinput, #wpcf7-f156-p143-o1\20 formwrap > form > p > span.wpcf7-form-control-wrap.Message > textarea { width: 380px !important; }
+  }
+  
+  @media only screen and ( max-width: 517px ) {
+       h1 { font-size: 30px; }
+    form { width: 295px !important; }
+    #wpcf7-f156-p143-o1\20 formwrap > form > p > span.wpcf7-form-control-wrap.Subject.flat > select, #wpcf7-f156-p143-o1\20 formwrap > form > p > span.wpcf7-form-control-wrap.Subject.flat { width: 290px !important; }
+      .nameinput, .emailinput, #wpcf7-f156-p143-o1\20 formwrap > form > p > span.wpcf7-form-control-wrap.Message > textarea { width: 225px !important; }
+    .btn { width: 110px; }
+  }
